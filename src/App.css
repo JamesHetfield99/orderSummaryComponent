@@ -1,38 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+:root {
+    --paleBlue: hsl(225, 100%, 94%);
+    --brightBlue: hsl(245, 75%, 52%);
+    --veryPaleBlue: hsl(225, 100%, 98%);
+    --desaturatedBlue: hsl(224, 23%, 55%);
+    --darkBlue: hsl(223, 47%, 23%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    background-color: var(--paleBlue);
+    background-image: url("./images//pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
 .App {
-  text-align: center;
+    display: flex;
+    height: 100vh;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+    display: flex;
+    flex-direction: column;
+    width: 525px;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: rgba(65, 103, 207, 0.2) 0px 40px 40px -20px;
+    /* box-shadow: 0 4px 2px -2px gray; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+section,.header-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.header-element,.plan-items-container{
+    width: 80%;
+}
+section {
+    padding: 3.5rem;
+    gap: 4rem;
+}
+.header-element {
+    gap: 1rem;
+}
+.header-element h1 {
+    font-weight: 900;
+    color: var(--darkBlue);
+    font-size: 2rem;
+}
+.header-element p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--desaturatedBlue);
+    line-height: 1.5;
+}
+.plan-items-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.product-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: auto;
+    gap: 0.3rem;
+    padding-left: 1.5rem;
+}
+.product-name {
+    color: var(--darkBlue);
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+.product-price {
+    font-size: 1.2rem;
+    color: var(--desaturatedBlue);
+}
+.change-element {
+    font-size: 1rem;
+    font-weight: 980;
+    cursor: pointer;
+}
+.change-element:hover {
+    text-decoration: none;
+    font-weight: 700;
+    color: #766cf1;
+}
+.options-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+}
+.proceed-button{
+    width: 100%;
+    height: 3.5rem;
+    border: none;
+    background-color: var(--brightBlue);
+    font-weight: 700;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+}
+.proceed-button:hover {
+    background-color: #766cf1;
+    font-weight: 900;
+}
+.cancel-order {
+    color: var(--desaturatedBlue);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.cancel-order:hover {
+    color: var(--darkBlue);
+    font-weight: 900;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (max-width: 600px) {
+    body {
+      background-image: url("./images//pattern-background-mobile.svg");
+    }
+    section {
+        padding: 1.8rem 1.6rem;
+        gap: 2.5rem;
+    }
+    .App {
+        padding: 1.5rem;
+    }
+    .header-element h1 {
+        font-size: 1.5rem;
+    }
+    .header-element p {
+        font-size: 1rem;
+    }
+    .product-info-wrapper {
+        padding: 0.7rem;
+    }
+    .product-name,.product-price {
+        font-size: 1rem;
+    }
+    .change-element {
+        font-size: 0.8rem;
+    }
+    .proceed-button,.cancel-order {
+        font-size: 1rem;
+    }
+    .proceed-button {
+        height: 3.2rem;
+    }
+    
 }
